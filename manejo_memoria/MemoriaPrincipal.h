@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <list>
+#include <vector>
 #include "../DEFINITIONS.h"
 
 class MemoriaPrincipal {
@@ -16,9 +16,9 @@ private:
     int* memoria;
 
 public:
-    std::list<int*> libres;
+    std::vector<int*> libres;
     MemoriaPrincipal();
-    bool esLibre();
+    int esLibre();
 
 };
 

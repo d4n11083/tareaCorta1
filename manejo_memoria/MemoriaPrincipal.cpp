@@ -12,13 +12,13 @@ MemoriaPrincipal::MemoriaPrincipal() {
     }
 }
 
-bool MemoriaPrincipal::esLibre() {
+int MemoriaPrincipal::esLibre() {
     for (int i = 0; i < libres.size(); ++i) {
-        if(*(libres.front()+i) == 0){
-            std::cout <<"Esta vacia" << std::endl;
-            return true;
+        if(*(libres[i]) == 0){
+            std::cout <<"Hay campo en esta posición: "<<i << std::endl;
+            return i;
         }
     }
-    std::cout <<"Esta llena" << std::endl;
-    return false; //Retorna False si no hay espacio disponible en memoria.
+    std::cout << "La memoria está llena " << std::endl;
+    return -1;
 }
