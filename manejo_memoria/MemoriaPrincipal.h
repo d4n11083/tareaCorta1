@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <vector>
 #include "../DEFINITIONS.h"
+#include "leerTXT.h"
 
 struct BLOQUE{
     int* posInicio;
@@ -23,12 +24,15 @@ class MemoriaPrincipal {
 private:
     int* memoria;
     std::vector<BLOQUE> libres;
+    leerTXT *leerDisco = new leerTXT();
+
 public:
 
     MemoriaPrincipal();
     int esLibre();
-    void cargarBloque(int tamanoBloque, int proceso);
+    void cargarBloque(int proceso, std::string path);
     std::string liberarBloque(int indiceBloquememoria);
+    std::string leer(int bloque);
 
 };
 

@@ -17,10 +17,11 @@ private:
     int tamanoProceso;
 
 public:
-    
 
-    leerTXT(std::string path);
-    int leerlineaTXT(int lineaLeer);
+
+    leerTXT();
+    int leerlineaTXT(int lineaLeer, std::string path);
+    int cantLineasTXT(std::string path);
     void imprimirLineaTXT(int proceso, int tamanoProceso);
 
 };

@@ -26,12 +26,14 @@ int MemoriaPrincipal::esLibre() {
     return -1;
 }
 
-void MemoriaPrincipal::cargarBloque(int tamanoBloque,int proceso) {
+void MemoriaPrincipal::cargarBloque(int proceso, std::string path) {
     int x = esLibre();
-    libres[x].isLibre = false;
     if( x >= 0){
+        libres[x].isLibre = false;
+        int tamanoBloque = leerDisco->leerlineaTXT(proceso,path) * 1000;
         for (int i = 0; i < tamanoBloque; ++i) {
             memoria[*libres[x].posInicio + i] = proceso;
+            std::cout << i << std::endl;
         }
     }else{
         std::cout << "No hay espacio disponible para cargar en memoria";
@@ -50,4 +52,14 @@ std::string MemoriaPrincipal::liberarBloque(int indiceBloqueMemoria) {
         }
         return "liberado";
     }
+}
+
+std::string MemoriaPrincipal::leer(int bloque) {
+
+    int* posicion = libres[bloque].posInicio;
+
+    for(int i = 0; i < TAMANO_PAGINA; i++){
+        std::cout  << *(posicion + i) << " " << i << std::endl;
+    }
+
 }

@@ -5,15 +5,18 @@
 int main() {
 
     MemoriaPrincipal *mem = new MemoriaPrincipal();
-    leerTXT *leerTXT1 = new leerTXT("Hawaiana.txt");
-    mem->esLibre();
-    mem->cargarBloque(32000,1);
-    mem->cargarBloque(12000,2);
-    mem->esLibre();
+    leerTXT *leerTXT1 = new leerTXT();
+//    mem->esLibre();
+//    mem->cargarBloque(1,"Hawaiana.txt");
+//    std::cout << "fwefguaekgfesrfgsjgfejrsgfjsgfsjgsgksgjshkgsjhgjsgjkshgjks" << std::endl;
+//    mem->cargarBloque(4,"JamonYQueso.txt");
+//    mem->esLibre();
+//
+//    mem->leer(0);
+//
+//    mem->liberarBloque(0);
+//    mem->esLibre();
 
-    mem->liberarBloque(0);
-    mem->esLibre();
-
-    leerTXT1->leerlineaTXT(4);
+    std::cout<<leerTXT1->cantLineasTXT("JamonYQueso.txt");
     return 0;
 }
