@@ -5,3 +5,4 @@
 //Definiciones de Algunas Variables importantes
 
 #define CantidadEnteros 250000
+#define TAMANO_PAGINA 50000

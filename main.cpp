@@ -2,15 +2,15 @@
 #include "manejo_memoria/MemoriaPrincipal.h"
 #include "DEFINITIONS.h"
 int main() {
+
     MemoriaPrincipal *mem = new MemoriaPrincipal();
-    int x = 1;
-    *(mem->libres[0]) = 1;
-    *(mem->libres[1]) = 1;
-    *(mem->libres[2]) = 1;
-    *(mem->libres[3]) = 1;
-    *(mem->libres[4]) = 1;
+    mem->esLibre();
+    mem->cargarBloque(32000,1);
+    mem->cargarBloque(12000,2);
+    mem->esLibre();
 
+    mem->liberarBloque(0);
+    mem->esLibre();
 
-    std::cout << mem->esLibre()<< std::endl;
     return 0;
 }

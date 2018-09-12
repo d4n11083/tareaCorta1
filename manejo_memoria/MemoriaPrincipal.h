@@ -10,15 +10,25 @@
 #include <vector>
 #include "../DEFINITIONS.h"
 
+struct BLOQUE{
+    int* posInicio;
+    int indice = 0;
+    bool isLibre = true;
+    std::string proceso;
+
+};
+
 class MemoriaPrincipal {
 
 private:
     int* memoria;
-
+    std::vector<BLOQUE> libres;
 public:
-    std::vector<int*> libres;
+
     MemoriaPrincipal();
     int esLibre();
+    void cargarBloque(int tamanoBloque, int proceso);
+    std::string liberarBloque(int indiceBloquememoria);
 
 };
 
